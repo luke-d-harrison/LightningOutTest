@@ -1,1 +1,26 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://psicon--r3luke.sandbox.my.site.com/referralportal/lightning/lighting.out.js"></script>
+  <script>
+    const appName = 'c:gpReferralFormWrapper' // aura app
+    const componentName = 'c:gpReferralFormFlow' // lwc
+    const lightningEndPoint = 'https://psicon--r3luke.sandbox.my.site.com' // Experience Cloud site
+    const targetElement = document.querySelector('[data-gp-referral-form]')
+    const componentAttributes = {
+      
+    }
+    $Lightning.use(appName, () => {
+      $Lightning.createComponent(componentName, componentAttributes, targetElement, (component) => {
+        console.log('Component created', component)
+      })
+    }, lightningEndPoint)
+  </script>
+  <title>GP Referral Form</title>
+</head>
+<body>
+  <div data-gp-referral-form></div>
+</body>
+</html>
