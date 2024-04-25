@@ -7,16 +7,20 @@
   <script>
     const appName = 'c:gpReferralFormWrapper'
     const componentName = 'c:testLWC'
-    const lightningEndPoint = 'https://psicon--r3luke.sandbox.my.site.com/gpreferralform'
+    const lightningEndPoint = 'https://psicon--r3luke.sandbox.my.salesforce.com/gpreferralform'
     const targetElement = document.querySelector('[data-gp-referral-form]')
-    const componentAttributes = {
-      
-    }
+    const componentAttributes = {}
+  
     $Lightning.use(appName, () => {
-      $Lightning.createComponent(componentName, componentAttributes, targetElement, (component) => {
-        console.log('Component created', component)
-      })
-    }, lightningEndPoint)
+      $Lightning.createComponent(
+        componentName, 
+        componentAttributes, 
+        targetElement, 
+        (component) => {
+          console.log('Component created', component)
+        }
+      );
+    }, lightningEndPoint);
   </script>
   <title>GP Referral Form</title>
 </head>
