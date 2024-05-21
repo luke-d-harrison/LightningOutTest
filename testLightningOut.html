@@ -11,16 +11,34 @@
     const targetElement = document.querySelector('[data-gp-referral-form]');
     const componentAttributes = {};
   
-    $Lightning.use(appName, () => {
+    // $Lightning.use(appName, () => {
+    //   $Lightning.createComponent(
+    //     componentName, 
+    //     componentAttributes, 
+    //     targetElement, 
+    //     (cmp) => {
+    //       console.log('Component created', cmp)
+    //     }
+    //   );
+    // }, lightningEndPoint);
+
+  
+  $Lightning.use(
+    "c:gpReferralFormWrapper", // name of the Lightning Out app
+    function () {
+      // Callback once framework and app loaded
       $Lightning.createComponent(
-        componentName, 
-        componentAttributes, 
-        targetElement, 
-        (component) => {
-          console.log('Component created', component)
-        }
+        "c:gpReferralFormFlow", // top-level component of your app
+        {}, // attributes to set on the component when created
+        "body", // the DOM location to insert the component
+        function (cmp) {
+          // callback when component is created and active on the page
+        },
       );
-    }, lightningEndPoint);
+    },
+    "https://psicon--r3luke.sandbox.my.salesforce.com/gpreferralform/lightning/lightning.out.js", // Site endpoint
+  );
+
   </script>
   <title>GP Referral Form</title>
 </head>
