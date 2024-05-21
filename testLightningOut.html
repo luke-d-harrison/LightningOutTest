@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://psicon--r3luke.sandbox.lightning.force.com/lightning/lightning.out.js"></script>
   <script>
+    // Define the app name (Lightning app containing the component)
     const appName = 'c:gpReferralFormWrapper';
+    // Define the component name (Flow wrapper component)
     const componentName = 'c:gpReferralFormFlow';
-    const lightningEndPoint = 'https://psicon--r3luke.sandbox.lightning.force.com/lightning/lightning.out.js';
+    // Define the Lightning endpoint (base URL for the org)
+    const lightningEndPoint = 'https://psicon--r3luke.sandbox.lightning.force.com';
+    // Target element in the external page where the component will be inserted
     const targetElement = document.querySelector('[data-gp-referral-form]');
+    // Component attributes (if any need to be passed to the Lightning component)
     const componentAttributes = {};
-  
+
     $Lightning.use(appName, () => {
       $Lightning.createComponent(
         componentName, 
@@ -29,3 +34,4 @@
   <div data-gp-referral-form></div>
 </body>
 </html>
+
